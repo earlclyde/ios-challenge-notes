@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		18383D931CE6277000B119A9 /* Start.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18383D921CE6277000B119A9 /* Start.swift */; };
+		18383D961CE6279900B119A9 /* StartController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18383D951CE6279900B119A9 /* StartController.swift */; };
+		18383D9B1CE6281A00B119A9 /* StartDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18383D9A1CE6281A00B119A9 /* StartDetailViewController.swift */; };
+		18383D9D1CE6282F00B119A9 /* StartListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18383D9C1CE6282F00B119A9 /* StartListTableViewController.swift */; };
 		1AFCF6BE1CDC050E006D2F3D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AFCF6BD1CDC050E006D2F3D /* AppDelegate.swift */; };
 		1AFCF6C31CDC050E006D2F3D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1AFCF6C11CDC050E006D2F3D /* Main.storyboard */; };
 		1AFCF6C51CDC050E006D2F3D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1AFCF6C41CDC050E006D2F3D /* Assets.xcassets */; };
@@ -14,6 +18,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		18383D921CE6277000B119A9 /* Start.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Start.swift; path = ../Start.swift; sourceTree = "<group>"; };
+		18383D951CE6279900B119A9 /* StartController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StartController.swift; sourceTree = "<group>"; };
+		18383D9A1CE6281A00B119A9 /* StartDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StartDetailViewController.swift; sourceTree = "<group>"; };
+		18383D9C1CE6282F00B119A9 /* StartListTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StartListTableViewController.swift; sourceTree = "<group>"; };
 		1AFCF6BA1CDC050E006D2F3D /* Notes.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Notes.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1AFCF6BD1CDC050E006D2F3D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1AFCF6C21CDC050E006D2F3D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -33,11 +41,35 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		18383D941CE6277E00B119A9 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				18383D951CE6279900B119A9 /* StartController.swift */,
+			);
+			name = Controller;
+			sourceTree = "<group>";
+		};
+		18383D971CE627B900B119A9 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				18383D9A1CE6281A00B119A9 /* StartDetailViewController.swift */,
+				18383D9C1CE6282F00B119A9 /* StartListTableViewController.swift */,
+			);
+			name = ViewControllers;
+			sourceTree = "<group>";
+		};
+		18383D9E1CE645E200B119A9 /* Objects */ = {
+			isa = PBXGroup;
+			children = (
+				18383D921CE6277000B119A9 /* Start.swift */,
+			);
+			name = Objects;
+			sourceTree = "<group>";
+		};
 		1AFCF6B11CDC050E006D2F3D = {
 			isa = PBXGroup;
 			children = (
 				1AFCF6BC1CDC050E006D2F3D /* Notes */,
-				1AFCF6BB1CDC050E006D2F3D /* Products */,
 			);
 			sourceTree = "<group>";
 		};
@@ -47,16 +79,21 @@
 				1AFCF6BA1CDC050E006D2F3D /* Notes.app */,
 			);
 			name = Products;
+			path = ..;
 			sourceTree = "<group>";
 		};
 		1AFCF6BC1CDC050E006D2F3D /* Notes */ = {
 			isa = PBXGroup;
 			children = (
 				1AFCF6BD1CDC050E006D2F3D /* AppDelegate.swift */,
+				18383D9E1CE645E200B119A9 /* Objects */,
+				18383D971CE627B900B119A9 /* ViewControllers */,
+				18383D941CE6277E00B119A9 /* Controller */,
 				1AFCF6C11CDC050E006D2F3D /* Main.storyboard */,
 				1AFCF6C41CDC050E006D2F3D /* Assets.xcassets */,
 				1AFCF6C61CDC050E006D2F3D /* LaunchScreen.storyboard */,
 				1AFCF6C91CDC050E006D2F3D /* Info.plist */,
+				1AFCF6BB1CDC050E006D2F3D /* Products */,
 			);
 			path = Notes;
 			sourceTree = "<group>";
@@ -132,7 +169,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				18383D931CE6277000B119A9 /* Start.swift in Sources */,
 				1AFCF6BE1CDC050E006D2F3D /* AppDelegate.swift in Sources */,
+				18383D9D1CE6282F00B119A9 /* StartListTableViewController.swift in Sources */,
+				18383D9B1CE6281A00B119A9 /* StartDetailViewController.swift in Sources */,
+				18383D961CE6279900B119A9 /* StartController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -245,10 +286,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = Notes/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.devmountain.Notes;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Debug;
 		};
@@ -256,10 +300,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = Notes/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.devmountain.Notes;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Release;
 		};
@@ -282,6 +329,7 @@
 				1AFCF6CE1CDC050E006D2F3D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
