@@ -24,13 +24,14 @@ class StartListTableViewController: UITableViewController {
 // MARK: table view data source
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return StartController.sharedController.starter.count
+        return StartController.sharedController.entries.count
 }
 
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("toStartCell", forIndexPath: indexPath)
         
-        let start = StartController.sharedController.starter[indexPath.row]
+        let start = StartController.sharedController.entries[indexPath.row]
+        
         
         cell.textLabel?.text = start.title
         
@@ -40,7 +41,7 @@ class StartListTableViewController: UITableViewController {
     override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
         if editingStyle == .Delete {
             
-            let start = StartController.sharedController.starter[indexPath.row]
+            let start = StartController.sharedController.entries[indexPath.row]
             
             StartController.sharedController.removeStart(start)
             
@@ -57,9 +58,9 @@ class StartListTableViewController: UITableViewController {
             if let detailViewController = segue.destinationViewController as? StartDetailViewController,
                 let selectedIndex = tableView.indexPathForSelectedRow?.row {
                 
-                let start = StartController.sharedController.starter[selectedIndex]
-                detailViewController.start = start
-            }
+                let start = StartController.sharedController.entries[selectedIndex]
+                detailViewController.entry = entry 
+            
         }
     }
     

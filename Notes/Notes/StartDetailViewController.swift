@@ -13,31 +13,31 @@ class StartDetailViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var titleTextField: UITextField!
     @IBOutlet weak var bodyTextView: UITextView!
     
-    var start: Start?
+    var entry: Entry?
  
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        if let start = start {
-            updateWithStart(start)
+        if let entry = entry {
+            updateWithStart(entry)
         }
     }
 
     @IBAction func saveButtonTapped(sender: AnyObject) {
     
-    if let start = self.start {
+    if let start = self.entry {
         
-        start.title = self.titleTextField.text!
-        start.text = self.bodyTextView.text
-        start.textStorage = NSData()
+        entry.title = self.titleTextField.text!
+        entry.text = self.bodyTextView.text
+        entry.textStorage = NSData()
     
     } else {
    
-    let newStart = Start(title: self.titleTextField.text!, text: self.bodyTextView.text)
+    let newStart = Entry(title: self.titleTextField.text!, text: self.bodyTextView.text)
     
     StartController.sharedController.addStart(newStart)
    
-    self.start = newStart
+    self.entry = newEntry
     }
     
     self.navigationController?.popViewControllerAnimated(true)
@@ -49,11 +49,11 @@ class StartDetailViewController: UIViewController, UITextFieldDelegate {
         bodyTextView.text = ""
 }
 
-    func updateWithStart(start: Start) {
-        self.start = start
+    func updateWithStart(entry: Entry) {
+        self.entry = entry
         
-        self.titleTextField.text = start.title
-        self.bodyTextView.text = start.text
+        self.titleTextField.text = entry.title
+        self.bodyTextView.text = entry.text
 }
 // MARK: UITextFieldDelegate
 

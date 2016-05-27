@@ -7,29 +7,29 @@ import Foundation
 
 class StartController {
     
-    private let starterKey = "starter"
+    private let entryKey = "entry"
     
     static let sharedController = StartController()
     
-    var starter: [Start]
+    var entries: [Entry]
     
     init() {
        
-        self.starter = []
+        self.entries = []
         
         self.loadFromPersistentStorage()
     }
     
-    func addStart(start: Start) {
+    func addStart(entry: Entry) {
         
-        starter.append(start)
+        entries.append(entry)
         
         self.saveToPersistentStorage()
     }
-    func removeStart(start: Start) {
+    func removeStart(entry: Entry) {
         
-        if let startIndex = starter.indexOf(start) {
-            starter.removeAtIndex(startIndex)
+        if let startIndex = entries.indexOf(entry) {
+            entries.removeAtIndex(startIndex)
         }
         
         self.saveToPersistentStorage()
@@ -37,18 +37,18 @@ class StartController {
     }
     func loadFromPersistentStorage() {
         
-        let startDictionariesFromDefaults = NSUserDefaults.standardUserDefaults().objectForKey(starterKey) as?
+        let entryDictionariesFromDefaults = NSUserDefaults.standardUserDefaults().objectForKey(entryKey) as?
             [Dictionary< String, AnyObject>]
         
-        if let startDictionaries = startDictionariesFromDefaults {
+        if let startDictionaries = entryDictionariesFromDefaults {
             
-            self.starter = startDictionaries.map({Start(dictionary: $0)!})
+            self.entries = startDictionaries.map({Entry(dictionary: $0)!})
     }
 }
     func saveToPersistentStorage() {
     
-        let startDictionaries = self.starter.map({$0.dictionaryCopy()})
+        let entryDictionaries = self.entries.map({$0.dictionaryCopy()})
 
-        NSUserDefaults.standardUserDefaults().setObject(startDictionaries, forKey: starterKey)
+        NSUserDefaults.standardUserDefaults().setObject(entryDictionaries, forKey: entryKey)
 }
 }

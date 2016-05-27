@@ -8,31 +8,31 @@
 
 import Foundation
 
-class Start: Equatable {
+class Entry: Equatable {
     
-    private let textStorageKey = "textStorage"
+    private let timestampKey = "timestamp"
     private let titleKey = "title"
     private let textKey = "text"
     
     
-    var textStorage: NSData
+    var timestamp: NSData
     var title: String
     var text: String
     
-    init(textStorage: NSData = NSData(), title: String, text: String) {
+    init(timestamp: NSData = NSData(), title: String, text: String) {
         
-        self.textStorage = textStorage
+        self.timestamp = timestamp
         self.title = title
         self.text = text
     }
     
-    init?(dictionary: Dictionary<String, AnyObject>) {
-        guard let textStorage = dictionary[textStorageKey] as? NSDate,
+    init?(dictionary: [String: AnyObject]) {
+        guard let textStorage = dictionary[timestampKey] as? NSDate,
             let title = dictionary[titleKey] as? String,
             let text = dictionary[textKey] as? String else {
                 
                 //Set values for stored properties due to requirement as of swift 2.0
-                self.textStorage = NSData()
+                self.timestamp = NSData()
                 self.text = ""
                 self.title = ""
                 
@@ -42,17 +42,15 @@ class Start: Equatable {
         
         func dictionaryCopy() -> Dictionary<String, AnyObject> {
             let dictionary = [
-                textStorageKey : self.textStorage,
+                timestamp : self.timestamp,
                 titleKey : self.title,
                 textKey : self.text
             ]
-            
             return dictionary
         }
     }
 
-    func == (lhs: Start, rhs: Start) -> Bool {
-        return ObjectIdentifier(lhs) == ObjectIdentifier(rhs)
+    func == (lhs: Entry, rhs: Entry) -> Bool {
+        return ObjectIdentifier(lhs)==ObjectIdentifier(rhs)
     }
-
 
