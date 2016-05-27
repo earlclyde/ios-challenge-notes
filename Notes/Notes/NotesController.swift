@@ -15,14 +15,17 @@ class NotesController {
     private let notesKey = "notes"
     
     init(){
-        self.notes = [] }
+        self.notes = []
+    loadFromPersistentStorage() }
     
     func addNote(note: Note) {
-        notes.append(note) }
+        notes.append(note)
+    saveToPersistentStorage() }
     
     func removeNote(note: Note) {
         if let index = notes.indexOf(note) {
-            notes.removeAtIndex(index) }}
+            notes.removeAtIndex(index)
+    saveToPersistentStorage() }}
     
     func saveToPersistentStorage() {
         NSUserDefaults.standardUserDefaults().setObject(notes.map{$0.dictionaryCopy}, forKey: notesKey )}
